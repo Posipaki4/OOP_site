@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка завдання 4</title>
+    <style>
+        :root {
+            --success-color: #28a745;
+            --bg-color: #f4f7f9;
+            --card-bg: #ffffff;
+            --primary-color: #003366;
+            --accent-soft: #eef2f7;
+            --border-color: #d1d9e6;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .test-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .header { 
+            text-align: center; 
+            margin-bottom: 30px; 
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .task-number {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        h1 { font-size: 1.6rem; color: #333; margin: 10px 0; }
+
+        .status-badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: var(--success-color);
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        h3 { color: var(--primary-color); font-size: 1.1rem; }
+
+        .console-box {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            margin: 15px 0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .logic-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .array-item {
+            background: #fff;
+            padding: 10px 5px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .highlight-item {
+            border: 2px solid var(--success-color);
+            background: #f0fff0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        .celebration {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--success-color);
+            font-weight: bold;
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid var(--success-color);
+            border-radius: 8px;
+            background: #f9fff9;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover { color: var(--primary-color); }
+    </style>
+</head>
+<body>
+
+<div class="test-card">
+    <div class="header">
+        <div class="task-number">Завдання №4</div>
+        <h1>Визначення дня тижня</h1>
+        <div class="status-badge">✓ ВЕРІФІКОВАНО</div>
+    </div>
+
+    <div>
+        <h3>💻 Консольний вивід:</h3>
+        <div class="console-box">
+            Enter the number of day: 6 <br>
+            ------------------------------------------ <br>
+            The 6 is Saturday
+        </div>
+    </div>
+
+    <div style="background: var(--accent-soft); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color);">
+        <h3 style="margin-top: 0;">🔍 Робота з масивом:</h3>
+        <div class="logic-grid">
+            <div class="array-item">0: Mon</div>
+            <div class="array-item">1: Tue</div>
+            <div class="array-item">2: Wed</div>
+            <div class="array-item">3: Thu</div>
+            <div class="array-item">4: Fri</div>
+            <div class="array-item highlight-item">5: Sat</div>
+            <div class="array-item">6: Sun</div>
+        </div>
+        <p style="font-size: 0.9rem; color: #444; margin-bottom: 0;">
+            <strong>Логіка:</strong> Значення <code>day-1</code> (6-1=5) відповідає індексу елемента "Saturday" у масиві. Перевірка <code>0 < day < 8</code> забезпечує безпеку виконання.
+        </p>
+    </div>
+
+    <div class="celebration">
+        Все вірно 🎉
+    </div>
+
+    <a href="main.html" class="back-link">← Повернутися до головної</a>
+</div>
+
+</body>
+</html>

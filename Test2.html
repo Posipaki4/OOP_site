@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка завдання 2</title>
+    <style>
+        :root {
+            --success-color: #28a745;
+            --bg-color: #f4f7f9;
+            --card-bg: #ffffff;
+            --primary-color: #003366;
+            --accent-soft: #eef2f7;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .test-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .header { text-align: center; margin-bottom: 30px; }
+
+        .task-number {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: var(--success-color);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        h3 { color: var(--primary-color); margin-top: 0; display: flex; align-items: center; gap: 10px; }
+
+        .console-box {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 25px;
+            border-radius: 10px;
+            font-family: 'Consolas', monospace;
+            margin: 20px 0;
+            line-height: 1.6;
+            border-left: 5px solid #007bff;
+        }
+
+        .evidence-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: var(--accent-soft);
+            border-radius: 12px;
+            border: 1px solid #d1d9e6;
+        }
+
+        .proof-step {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #c3cfe2;
+            font-size: 1.1rem;
+        }
+
+        .math-expr {
+            display: block;
+            text-align: center;
+            font-family: "Times New Roman", serif;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 15px 0;
+        }
+
+        .celebration {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--success-color);
+            font-weight: bold;
+            margin-top: 40px;
+            padding: 20px;
+            border: 3px dashed var(--success-color);
+            border-radius: 15px;
+            background: #f0fff0;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .back-link:hover { color: var(--primary-color); text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="test-card">
+    <div class="header">
+        <div class="task-number">Завдання №2</div>
+        <h1>Звіт результатів перевірки</h1>
+        <div class="status-badge">✓ ОБЧИСЛЕННЯ ВІРНЕ</div>
+    </div>
+
+    <div>
+        <h3>💻 Введення та виведення:</h3>
+        <div class="console-box">
+            Enter a: 7 <br>
+            Enter b: 3 <br>
+            Enter c: 0 <br>
+            Enter d: 3 <br>
+            ------------------------------------------ <br>
+            Розрахунок за формулою Math... <br>
+            x = 100,50416239678802
+        </div>
+    </div>
+
+    <div class="evidence-section">
+        <h3>🔍 Доказова база (Математичний розбір):</h3>
+        <p>Аналізуємо вираз: x = (a+b)^2/sqrt(sinc-cosd)</p>
+        
+        <div class="proof-step">
+            1. Чисельник: (7 + 3)^2 = <strong>100</strong> <br>
+            2. Знаменник (тригонометрія в рад): <br>
+            • sin(0) = 0 <br>
+            • cos(3) = -0.98999 <br>
+            3. Підкореневий вираз: 0 - (-0.98999) = <strong>0.98999</strong> <br>
+            4. Корінь: √0.98999 ≈ <strong>0.99498</strong> <br>
+            5. Фінальний поділ: 100 / 0.99498 ≈ <strong>100.50416...</strong>
+        </div>
+
+        <p><strong>Висновок:</strong>Результати ідентичні.</p>
+    </div>
+
+    <div class="celebration">
+        Все вірно🎉
+    </div>
+
+    <a href="main.html" class="back-link">← Повернутися до списку завдань</a>
+</div>
+
+</body>
+</html>

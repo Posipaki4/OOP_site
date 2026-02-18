@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка завдання 3</title>
+    <style>
+        :root {
+            --success-color: #28a745;
+            --bg-color: #f4f7f9;
+            --card-bg: #ffffff;
+            --primary-color: #003366;
+            --accent-soft: #eef2f7;
+            --warning-color: #ffc107;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .test-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .header { text-align: center; margin-bottom: 30px; }
+
+        .task-number {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: var(--success-color);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        h3 { color: var(--primary-color); margin-top: 30px; display: flex; align-items: center; gap: 10px; }
+
+        .console-box {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 25px;
+            border-radius: 10px;
+            font-family: 'Consolas', monospace;
+            margin: 20px 0;
+            line-height: 1.6;
+            border-left: 5px solid var(--warning-color);
+        }
+
+        .evidence-section {
+            padding: 25px;
+            background: var(--accent-soft);
+            border-radius: 12px;
+            border: 1px solid #d1d9e6;
+        }
+
+        .function-case {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #c3cfe2;
+            position: relative;
+        }
+
+        .active-branch {
+            border: 2px solid var(--success-color);
+            background: #f0fff0;
+        }
+
+        .active-branch::after {
+            content: "Обрана гілка";
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: var(--success-color);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .math-font {
+            font-family: "Times New Roman", serif;
+            font-size: 1.25rem;
+        }
+
+        .celebration {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--success-color);
+            font-weight: bold;
+            margin-top: 40px;
+            padding: 20px;
+            border: 3px dashed var(--success-color);
+            border-radius: 15px;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="test-card">
+    <div class="header">
+        <div class="task-number">Завдання №3</div>
+        <h1>Обчислення функції в точці</h1>
+        <div class="status-badge">✓ ЛОГІКА ПЕРЕВІРЕНА</div>
+    </div>
+
+    <div>
+        <h3>💻 Консольний ввід:</h3>
+        <div class="console-box">
+            Enter x: 15 <br>
+            ------------------------------------------ <br>
+            Виконується перевірка умови x > 0... <br>
+            Answer for x = 15: 59
+        </div>
+    </div>
+
+    <div class="evidence-section">
+        <h3>🔍 Аналіз логіки (Proof):</h3>
+        <p>Функція має три розгалуження. Перевіряємо, яке з них відповідає значенню <strong>x = 15</strong>:</p>
+        
+        <div class="function-case active-branch">
+            <span class="math-font"><strong>1. Якщо x > 0:</strong> f(x) = 4x - 1</span> <br>
+            <small>Підставляємо: 4 * 15 - 1 = 60 - 1 = <strong>59</strong></small>
+        </div>
+
+        <div class="function-case">
+            <span class="math-font"><strong>2. Якщо x < 0:</strong> f(x) = 25x + 10</span> <br>
+            <small>Не виконується (15 не менше 0)</small>
+        </div>
+
+        <div class="function-case">
+            <span class="math-font"><strong>3. Якщо x = 0:</strong> f(x) = 0</span> <br>
+            <small>Не виконується (15 не дорівнює 0)</small>
+        </div>
+
+        <p><strong>Перевірка типу:</strong> При введенні тексту замість числа програма успішно видає помилку "Enter a number".</p>
+    </div>
+
+    <div class="celebration">
+         Все вірно 🎉
+    </div>
+
+    <a href="main.html" class="back-link">← Повернутися до головної</a>
+</div>
+
+</body>
+</html>

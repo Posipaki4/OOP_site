@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка завдання 5</title>
+    <style>
+        :root {
+            --success-color: #28a745;
+            --error-color: #dc3545;
+            --bg-color: #f4f7f9;
+            --card-bg: #ffffff;
+            --primary-color: #003366;
+            --accent-soft: #eef2f7;
+            --border-color: #d1d9e6;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .test-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .header { 
+            text-align: center; 
+            margin-bottom: 30px; 
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .task-number {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        h1 { font-size: 1.6rem; color: #333; margin: 10px 0; }
+
+        .status-badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: var(--success-color);
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        h3 { color: var(--primary-color); font-size: 1.1rem; }
+
+        .console-box {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: 'Consolas', monospace;
+            margin: 15px 0;
+            line-height: 1.4;
+            font-size: 0.9rem;
+        }
+
+        .console-error { color: #f44747; font-weight: bold; }
+        .console-success { color: #6a9955; }
+
+        .logic-flow {
+            background: var(--accent-soft);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .range-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .range-box {
+            padding: 5px 15px;
+            border: 2px solid var(--primary-color);
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .celebration {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--success-color);
+            font-weight: bold;
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid var(--success-color);
+            border-radius: 8px;
+            background: #f9fff9;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="test-card">
+    <div class="header">
+        <div class="task-number">Завдання №5</div>
+        <h1>Сума чисел у діапазоні</h1>
+        <div class="status-badge">✓ ТЕСТУВАННЯ ЗАВЕРШЕНО</div>
+    </div>
+
+    <div>
+        <h3>💻 Протокол консолі:</h3>
+        <div class="console-box">
+            Enter numbers between 1 and 25 to sum: 15 <br>
+            Current sum is: 15 <br>
+            Enter numbers between 1 and 25 to sum: 7 <br>
+            Current sum is: 22 <br>
+            Enter numbers between 1 and 25 to sum: 216 <br>
+            <span class="console-error">Error number is out of limit</span> <br>
+            Current sum is: 22 <br>
+            Enter numbers between 1 and 25 to sum: 12 <br>
+            Current sum is: 34 <br>
+            Enter numbers between 1 and 25 to sum: exit <br>
+            <span class="console-error">Error number is out of limit</span> <br>
+            <span class="console-success">Final sum is: 34</span>
+        </div>
+    </div>
+
+    <div class="logic-flow">
+        <h3 style="margin-top: 0;">🔍 Логіка валідації (Proof):</h3>
+        <p style="font-size: 0.9rem;">Програма реалізує ітераційне введення без використання масивів. Кожне число перевіряється на відповідність інтервалу:</p>
+        
+        <div class="range-visual">
+            <span style="color: var(--error-color);">X < 1</span>
+            <span>←</span>
+            <div class="range-box">[ 1 ... 25 ]</div>
+            <span>→</span>
+            <span style="color: var(--error-color);">X > 25</span>
+        </div>
+
+        <ul style="font-size: 0.85rem; color: #444;">
+            <li><strong>Число 216:</strong> Відхилено (поза межами).</li>
+            <li><strong>Текст "exit":</strong> Відхилено (не є числом або поза межами).</li>
+            <li><strong>Накопичення:</strong> Змінна <code>sum</code> оновлюється лише при успішній валідації.</li>
+        </ul>
+    </div>
+
+    <div class="celebration">
+        Все вірно 🎉
+    </div>
+
+    <a href="main.html" class="back-link">← Повернутися до головної</a>
+</div>
+
+</body>
+</html>

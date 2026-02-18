@@ -1,0 +1,81 @@
+Choose task to do(to exit write down any number not from list)
+1.Output information about author and find polinom
+2.Find value of expression
+3.Calculate the value of the function at point x
+4.Get week from number
+5.Calculate the sum of numbers in a given range
+1
+Name: Pastukh Sebastian
+Age: 17
+Course: IPZ-14
+Email: pas.sebas@knu.ua 
+Write down x to find polinom: p = a*x^4 - b*x^3 + c^x + d
+Enter x: 6
+Result p = 3493
+Choose task to do(to exit write down any number not from list)
+1.Output information about author and find polinom
+2.Find value of expression
+3.Calculate the value of the function at point x
+4.Get week from number
+5.Calculate the sum of numbers in a given range
+2
+Input a, b, c, d for equation x = (a+b)^2/sqrt(sinc-cosd)
+Enter a: 7
+Enter b: 3
+Enter c: 0
+Enter d: 3
+x = 100,50416239678802
+Choose task to do(to exit write down any number not from list)
+1.Output information about author and find polinom
+2.Find value of expression
+3.Calculate the value of the function at point x
+4.Get week from number
+5.Calculate the sum of numbers in a given range
+3
+Calculate the value of the function at point x, the value of which is entered from the console. If the input is not a number, display the corresponding message - Enter a number
+       {4x-1. , x>0
+f(x) = {25x+10, x<0
+       {0.    , x=0
+Enter x: 15
+Answer for x = 15: 59
+Choose task to do(to exit write down any number not from list)
+1.Output information about author and find polinom
+2.Find value of expression
+3.Calculate the value of the function at point x
+4.Get week from number
+5.Calculate the sum of numbers in a given range
+4
+Enter the number of day: 6
+The 6 is Saturday
+Choose task to do(to exit write down any number not from list)
+1.Output information about author and find polinom
+2.Find value of expression
+3.Calculate the value of the function at point x
+4.Get week from number
+5.Calculate the sum of numbers in a given range
+5
+Enter numbers beetwen 1 and 25 to sum: 15
+Current sum is: 15
+Enter numbers beetwen 1 and 25 to sum: 7
+Current sum is: 22
+Enter numbers beetwen 1 and 25 to sum: 12
+Current sum is: 34
+Enter numbers beetwen 1 and 25 to sum: 216
+Error number is out of limit
+Current sum is: 34
+Enter numbers beetwen 1 and 25 to sum: 3
+Current sum is: 37
+Enter numbers beetwen 1 and 25 to sum: 1
+Error number is out of limit
+Current sum is: 37
+Enter numbers beetwen 1 and 25 to sum: exit
+Error number is out of limit
+Current sum is: 37
+Final sum is: 37
+Choose task to do(to exit write down any number not from list)
+1.Output information about author and find polinom
+2.Find value of expression
+3.Calculate the value of the function at point x
+4.Get week from number
+5.Calculate the sum of numbers in a given range
+0

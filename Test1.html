@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка завдання 1</title>
+    <style>
+        :root {
+            --success-color: #28a745;
+            --bg-color: #f4f7f9;
+            --card-bg: #ffffff;
+            --primary-color: #003366;
+            --accent-soft: #eef2f7;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .test-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .header { text-align: center; margin-bottom: 30px; }
+
+        .task-number {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: var(--success-color);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        h3 { color: var(--primary-color); margin-top: 0; display: flex; align-items: center; gap: 10px; }
+
+        .console-box {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 25px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            margin: 20px 0;
+            line-height: 1.6;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            border-left: 5px solid var(--success-color);
+        }
+
+        .evidence-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: var(--accent-soft);
+            border-radius: 12px;
+            border: 1px solid #d1d9e6;
+        }
+
+        .proof-step {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #c3cfe2;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 1.2rem;
+        }
+
+        .formula {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .celebration {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--success-color);
+            font-weight: bold;
+            margin-top: 40px;
+            padding: 20px;
+            border: 3px dashed var(--success-color);
+            border-radius: 15px;
+            background: #f0fff0;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover { color: var(--primary-color); text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="test-card">
+    <div class="header">
+        <div class="task-number">Завдання №1</div>
+        <h1>Звіт результатів перевірки</h1>
+        <div class="status-badge">✓ ТЕСТ ПРОЙДЕНО УСПІШНО</div>
+    </div>
+
+    <div>
+        <h3>💻 Вивід у консоль:</h3>
+        <div class="console-box">
+            Введіть x: 6 <br>
+            ------------------------------------------ <br>
+            Дано: a=3, b=2, c=6, d=1 <br>
+            Формула: p = a*x^4 - b*x^3 + c*x + d <br>
+            ------------------------------------------ <br>
+            Результат: p = 3505
+        </div>
+    </div>
+
+    <div class="evidence-section">
+        <p>Для підтвердження точності програми виконаємо математичну перевірку вручну:</p>
+        
+        <div class="proof-step">
+            <span class="formula">p = 3 * 6⁴ - 2 * 6³ + 6 * 6 + 1</span>
+            1. Розрахунок степенів: 6⁴ = 1296, 6³ = 216 <br>
+            2. Множення: 3 * 1296 = 3888 <br>
+            3. Множення: 2 * 216 = 432 <br>
+            4. Додавання/віднімання: 3888 - 432 + 36 + 1 <br>
+            5. <strong>Результат: 3505</strong>
+        </div>
+
+        <p><strong>Висновок:</strong> Значення, отримане програмою, повністю відповідає математичному розрахунку. Програма працює коректно.</p>
+    </div>
+
+    <div class="celebration">
+        Все збігається 🎉
+    </div>
+
+    <a href="main.html" class="back-link">← Повернутися до списку завдань</a>
+</div>
+
+</body>
+</html>

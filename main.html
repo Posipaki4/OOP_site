@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота 1</title>
+    <style>
+        :root {
+            --primary-color: #003366; /* Колір університету */
+            --accent-color: #0056b3;
+            --bg-color: #f4f7f9;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* Шапка */
+        .header-section {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-weight: 500;
+            font-size: 1.2rem;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        /* Секції */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        h1 { /* Для заголовків секцій Мета, Умова тощо */
+            font-size: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+
+        /* Списки */
+        li {
+            font-size: 1.1rem;
+            list-style-type: none;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            border-left: 3px solid #ddd;
+        }
+
+        ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        /* Діаграма */
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            padding: 20px;
+            border: 1px dashed #ccc;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        /* Посилання та Кнопки */
+        .links-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .test-links a {
+            background-color: #6c757d;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .test-links a:after {
+            content: " →";
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-section">
+        <h1>КИЇВСЬКИЙ НАЦІОНАЛЬНИЙ УНІВЕРСИТЕТ ІМЕНІ ТАРАСА ШЕВЧЕНКА</h1>
+        <h2>Вступ до об’єктно-орієнтованого програмування</h2>
+        <h2>ПІБ - Пастух Себастьян Ігорович</h2>
+        <h2>Группа - ІПЗ-14</h2>
+        <h1>Лабораторна робота 1 Варіант 2</h1>
+    </div>
+
+    <div class="section">
+        <h1>Мета</h1>
+        <li>
+            Створити консольний застосунок мовою C#. Вхідні дані ввести з клавіатури. Результати вивести на консоль. Використати методи класів Console, Convert в процесі введення та виведення даних. Реалізувати перераховані завдання у вигляді методів класу Program. Виклик методівздійснити за допомогою меню, застосувавши оператор вибору switch. Усі завдання варіанта реалізувати в одному консольному проєкті Lab1.
+        </li>
+    </div>
+
+    <div class="section">
+        <h1>Умова лабораторної роботи</h1>
+        <li>
+            <ol>1.Вивести на консоль власні анкетні дані: прізвище, ім'я, вік, група, курс, e-mail. Обчислити значення поліному p = a*x^4 − b*x^3 + c*x + d. Значення a, b, c, d – дійсні числа, які слід ініціалізувати у функції, значення змінної x увести з консолі. Результат вивести на консоль.</ol>
+            <ol>2.За даними, що введені з консолі, визначити значення виразу, використовуючи математичні функції класу Math, і вивести результат на консоль.</ol>
+            <ol>3.Обчислити значення функції в точці х, значення якої ввести з консолі:</ol>
+            <ol>4.Написати метод, який в залежності від порядкового номера дня тижня (1, 2,.., 7) виводить на екран його назву (понеділок,...)</ol>
+            <ol>5.Обчислити суму чисел в заданому діапазоні. Значення чисел вводити з консолі. Якщо значення, що вводиться, виходить за межі заданого діапазону, вивести повідомлення про помилку і повторити введення. Не застосовувати масиви.</ol>
+        </li>
+    </div>
+
+    <div class="section">
+        <h1>Діаграмма класів</h1>
+        <div class="diagram-container">
+            <div class="mxgraph geDarkMode" style="max-width: 100%; border: 1px solid transparent; position: relative; color-scheme: light; cursor: pointer; overflow: hidden; width: 225px; height: 259px;" data-mxgraph="{...}">
+                <svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 225px; min-height: 259px; background-image: none; background-color: transparent;"><g transformOrigin="0 0" transform="scale(1,1)translate(-199,-98)"><g></g><g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 207 137.73 L 207 106 L 407 106 L 407 137.73" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path><path d="M 207 137.73 L 207 337.73 L 407 337.73 L 407 137.73" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" visibility="hidden" stroke-width="9"></path><path d="M 207 137.73 L 207 337.73 L 407 337.73 L 407 137.73" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path><path d="M 207 137.73 L 407 137.73" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" visibility="hidden" stroke-width="9"></path><path d="M 207 137.73 L 407 137.73" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g style=""><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"><text x="307" y="124">Program</text></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 207 141.73 L 407 141.73" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" visibility="hidden" stroke-width="9"></path><path d="M 207 141.73 L 407 141.73" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="207" y="145.73" width="200" height="32" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="207" y="145.73" width="200" height="32" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g fill="#000000" font-family="Helvetica" font-size="12px" clip-path="url(#mx-clip-211-151-192-32-0)" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"><text x="213" y="163.73">+Main(args: string[])</text></g><clipPath id="mx-clip-211-151-192-32-0"><rect x="211" y="151" width="192" height="32"></rect></clipPath></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="207" y="177.73" width="200" height="32" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="207" y="177.73" width="200" height="32" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g fill="#000000" font-family="Helvetica" font-size="12px" clip-path="url(#mx-clip-211-183-192-32-0)" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"><text x="213" y="195.73">-task1_1()</text></g><clipPath id="mx-clip-211-183-192-32-0"><rect x="211" y="183" width="192" height="32"></rect></clipPath></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="207" y="209.73" width="200" height="32" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="207" y="209.73" width="200" height="32" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g fill="#000000" font-family="Helvetica" font-size="12px" clip-path="url(#mx-clip-211-215-192-32-0)" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"><text x="213" y="227.73">-task1_2()</text></g><clipPath id="mx-clip-211-215-192-32-0"><rect x="211" y="215" width="192" height="32"></rect></clipPath></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="207" y="241.73" width="200" height="32" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="207" y="241.73" width="200" height="32" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g fill="#000000" font-family="Helvetica" font-size="12px" clip-path="url(#mx-clip-211-247-192-32-0)" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"><text x="213" y="259.73">-task1_3()</text></g><clipPath id="mx-clip-211-247-192-32-0"><rect x="211" y="247" width="192" height="32"></rect></clipPath></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="207" y="273.73" width="200" height="32" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="207" y="273.73" width="200" height="32" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g fill="#000000" font-family="Helvetica" font-size="12px" clip-path="url(#mx-clip-211-279-192-32-0)" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"><text x="213" y="291.73">-task1_4()</text></g><clipPath id="mx-clip-211-279-192-32-0"><rect x="211" y="279" width="192" height="32"></rect></clipPath></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="207" y="305.73" width="200" height="32" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="207" y="305.73" width="200" height="32" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g fill="#000000" font-family="Helvetica" font-size="12px" clip-path="url(#mx-clip-211-311-192-32-0)" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"><text x="213" y="323.73">-task1_5()</text></g><clipPath id="mx-clip-211-311-192-32-0"><rect x="211" y="311" width="192" height="32"></rect></clipPath></g></g><g></g><g></g></g></svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1>Код програми</h1>
+        <a href="code.cs">Відкрити код</a>
+    </div>
+
+    <div class="section">
+        <h1>Результат виконання програми</h1>
+        <a href="text.txt">Переглянути результат</a>
+    </div>
+
+    <div class="section">
+        <h1>Перевірка результатів</h1>
+        <div class="links-container test-links">
+            <a href="Test1.html">Тест 1</a>
+            <a href="Test2.html">Тест 2</a>
+            <a href="Test3.html">Тест 3</a>
+            <a href="Test4.html">Тест 4</a>
+            <a href="Test5.html">Тест 5</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1>Висновок</h1>
+        <li>Під час виконання роботи я створив консольний застосунок Lab1, реалізувавши завдання через окремі методи класу Program, що викликаються за допомогою оператора switch. Я опанував роботу з класами Console, а також навчився забезпечувати стабільність програми через методи Parse та TryParse для коректного введення даних. Це дозволило мені закріпити навички побудови логічної структури програми та обробки результатів обчислень у середовищі C#.</li>
+    </div>
+</div>
+</body>
+</html>
