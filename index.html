@@ -124,40 +124,6 @@
             content: " →";
         }
     </style>
-            <script>
-
-            // Read the logfile
-            // - Returns up to "NumberOfEntries" lines
-            // - Entries are returned in order determined by "Direction" parameter
-
-            function GetTextfileLines(FileUrl, NumberOfEntries, Direction) {
-
-                let xmlHttp = new XMLHttpRequest();
-                xmlHttp.open( "GET", FileUrl, false );
-                xmlHttp.send( null );
-                let Lines = xmlHttp.responseText.split("\n");
-
-                let LineCount = Lines.length;
-                let LastLineIdx = LineCount -2;   // Last entry is displayed first. The last line of the file is blank, so subtract 2 to get last line index
-                let FirstLineIdx =  Math.max(2, LineCount-NumberOfEntries-1);  // ...count backwards but stop before the header lines
-
-                let FileString = "";   
-                // let FileString = "<table><tr><th>Date</th><th>Event</th></tr>";   // Table with Header Row 
-            
-                if (Direction > 0) {
-                    for (let i = FirstLineIdx; i <= LastLineIdx; i++) {
-                        FileString += Lines[i];
-                    }
-                } else {
-                    for (let i = LastLineIdx; i >= FirstLineIdx; i--) {
-                        FileString += Lines[i];
-                    }
-                }
-
-                return FileString;
-            }
-
-        </script>
 <body>
 
 <div class="container">
@@ -198,12 +164,7 @@
 
     <div class="section">
         <h1>Код програми</h1>
-         <script>
-
-           
-            document.write(GetTextfileLines("code.cs", 170, 1));
-
-        </script>
+     <iframe src="code.cs">Переглянути результат</iframe>
     </div>
 
     <div class="section">
