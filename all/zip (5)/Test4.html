@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 4 - Validation</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --bg-color: #f4f7f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .console-box {
+            background-color: #2d2d2d;
+            color: #ffffff;
+            font-family: 'Consolas', 'Courier New', monospace;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        .evidence-section {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-left: 5px solid var(--primary-color);
+            margin-bottom: 20px;
+        }
+        h2 { color: var(--primary-color); }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="badge">✓ ТЕСТ ПРОЙДЕНО</div>
+        <h2>Завдання 4: Числа Фібоначчі</h2>
+        
+        <div class="console-box"><pre>
+Choose task 4
+Fibonacci numbers in the array
+Element 1 Index 0
+Element 2 Index 2
+Element 3 Index 3
+Element 3 Index 4
+Element 13 Index 10
+Element 13 Index 11
+Element 13 Index 12
+Element 2 Index 14
+        </pre></div>
+
+        <div class="evidence-section">
+            <p> Масив ПІСЛЯ обміну з Завдання 3: [1, 20, 2, 3, 3, 6, 6, 7, 7, 9, 13, 13, 13, 17, 2]</p>
+            <p> Генеруємо числа Фібоначчі: 1, 1, 2, 3, 5, 8, 13...</p>
+            <p>Програма успішно знаходить усі ці числа у відповідних індексах масиву (включаючи 2 на індексі 14, який опинився там після обміну). Тест пройдено.</p>
+        </div>
+
+        <a href="main.html" class="back-link">← Back to Main</a>
+    </div>
+</body>
+</html>
