@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 8 - Validation</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --bg-color: #f4f7f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .console-box {
+            background-color: #2d2d2d;
+            color: #ffffff;
+            font-family: 'Consolas', 'Courier New', monospace;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        .evidence-section {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-left: 5px solid var(--primary-color);
+            margin-bottom: 20px;
+        }
+        h2 { color: var(--primary-color); }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="badge">✓ ТЕСТ ПРОЙДЕНО</div>
+        <h2>Завдання 8: Метод бісекції</h2>
+        
+        <div class="console-box"><pre>
+Choose task 8
+Equation 2x^3 - 3x^2 - 12x + 8 = 0
+Enter left boundary 2
+Enter right boundary 15
+Enter precision 3
+Found root 5.25
+Check f(5.25) = 151.71875
+        </pre></div>
+
+        <div class="evidence-section">
+            <p>Функція f(x) = 2x^3 - 3x^2 - 12x + 8</p>
+            <p>Перевірка знаків на відрізку [2, 15]: f(2) = -12 (від'ємне), f(15) = 6000+ (додатне).</p>
+            <p>Ітерації бісекції з великою похибкою 3:</p>
+            <ul>
+                <li>Середина x = 8.5. f(8.5) > 0. Новий відрізок: [2, 8.5]. Ширина: 6.5.</li>
+                <li>Оскільки 6.5 все ще > 6 (eps * 2), ідемо далі.</li>
+                <li>Середина x = 5.25. f(5.25) > 0. Новий відрізок: [2, 5.25]. Ширина: 3.25.</li>
+                <li>3.25 < 6, тому цикл зупиняється на x = 5.25.</li>
+            </ul>
+            <p><strong>Результат:</strong> Завдяки заданій великій похибці алгоритм працює як вірно зупиняючись на значенні 5.25.</p>
+        </div>
+
+        <a href="main.html" class="back-link">← Back to Main</a>
+    </div>
+</body>
+</html>

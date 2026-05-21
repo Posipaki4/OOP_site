@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 6 - Validation</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --bg-color: #f4f7f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .console-box {
+            background-color: #2d2d2d;
+            color: #ffffff;
+            font-family: 'Consolas', 'Courier New', monospace;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        .evidence-section {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-left: 5px solid var(--primary-color);
+            margin-bottom: 20px;
+        }
+        h2 { color: var(--primary-color); }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="badge">✓ ТЕСТ ПРОЙДЕНО</div>
+        <h2>Завдання 6: Матриця (Студенти та дисципліни)</h2>
+        
+        <div class="console-box"><pre>
+Choose task 6
+Enter number of students rows 10
+Enter number of disciplines columns 7
+Lab work matrix
+8       6       3       11      4       9       14
+9       3       6       9       8       14      14
+3       14      6       9       6       3       0
+3       10      15      8       7       7       7
+11      6       2       2       3       14      13
+10      0       14      13      3       9       8
+12      8       7       10      0       9       13
+3       7       6       3       9       3       15
+0       11      4       12      12      11      1
+13      6       13      1       8       11      9
+Students with max lab works 63 are 1
+Disciplines with min lab works 60 are 4
+Students with 0 works in at least one discipline 2 5 6 8
+        </pre></div>
+
+        <div class="evidence-section">
+            <p>Сума по рядках виявила, що студент під індексом 1 (другий рядок: 9+3+6+9+8+14+14 = 63) має найбільшу кількість виконаних робіт.</p>
+            <p>Сума по стовпцях виявила, що 4 колонка (індекс 4: 4+8+6+7+3+3+0+9+12+8 = 60) має найменшу кількість зданих робіт.</p>
+            <p>Студенти під індексами 2, 5, 6, 8 дійсно мають значення "0" у своїх колонках.</p>
+            <p> Логіка матриці відпрацювала правильно.</p>
+        </div>
+
+        <a href="main.html" class="back-link">← Back to Main</a>
+    </div>
+</body>
+</html>
