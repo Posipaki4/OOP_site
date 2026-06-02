@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Звіт з лабораторної роботи №6</title>
+<style>
+:root {
+  --primary-color: #003366;
+  --bg-color: #f4f7f9;
+  --code-bg: #2d2d2d;
+  --code-color: #f8f8f2;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+}
+.report-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+h1 {
+  text-align: center;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+.section {
+  margin-bottom: 30px;
+}
+svg, img {
+  max-width: 100%;
+  height: auto;
+}
+ul.file-list {
+  list-style-type: none;
+  padding: 0;
+}
+ul.file-list li {
+  margin-bottom: 10px;
+}
+ul.file-list a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+ul.file-list a:hover {
+  text-decoration: underline;
+}
+.explanation {
+  background-color: #e6f2ff;
+  border-left: 4px solid var(--primary-color);
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 0 5px 5px 0;
+  font-style: italic;
+}
+pre {
+  background-color: var(--code-bg);
+  color: var(--code-color);
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  white-space: pre-wrap;
+}
+</style>
+</head>
+<body>
+<div class="report-container">
+  <h1>Звіт з лабораторної роботи №6</h1>
+  
+  <div class="section">
+    <h2>Мета</h2>
+    <p>
+      Опанувати принципи об'єктно-орієнтованого програмування в мові C#, зокрема роботу з класами, що пов'язані відношеннями асоціації, агрегації та композиції. Навчитися реалізовувати обробку виняткових ситуацій (exceptions) різних типів, створювати власні класи винятків та використовувати події (events) з делегатами.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Умова</h2>
+    <ul>
+        <li>Створити проект для консольного застосунку, який моделює роботу <strong>«розумного годинника»</strong>.</li>
+        <li>Включити в проект класи, що описують складові годинника: <code>GpsTracker</code>, <code>FitnessTracker</code>, <code>Communicator</code>. </li>
+        <li>Реалізувати відношення композиції (компоненти всередині годинника) та асоціації/агрегації (масив користувачів <code>Person</code>, які використовують годинники).</li>
+        <li>Розробити похідний клас від базового годинника — <code>SmartVoiceAssistant</code> (розумний голосовий помічник).</li>
+        <li>Реалізувати визначення та обробку виключних ситуацій (помилки масиву <code>IndexOutOfRangeException</code>, запису файлів <code>IOException</code>, власні помилки логіки <code>LowBatteryException</code>).</li>
+        <li>Визначити події та реалізувати їх обробку через делегати (критичні стани здоров'я <code>OnCriticalSituation</code> та рівень заряду акумулятора <code>OnBatteryLow</code>).</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Структура та взаємодія класів (Архітектура)</h2>
+    <div class="explanation">
+        <iframe src="diagram.pdf" width="100%" height="600px" style="border:none;"></iframe>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Код програми</h2>
+    <p>Вихідні коди проєкту розділені за принципом єдиної відповідальності та розташовані у відповідних файлах:</p>
+    <ul class="file-list">
+        <li><a href="Program.cs">Program.cs</a> — Головний файл, сценарій використання.</li>
+        <li><a href="SmartWatch.cs">SmartWatch.cs</a> — Базовий клас годинника (композитор).</li>
+        <li><a href="SmartVoiceAssistant.cs">SmartVoiceAssistant.cs</a> — Похідний клас розумного помічника.</li>
+        <li><a href="GpsTracker.cs">GpsTracker.cs</a> — Компонент для геолокації.</li>
+        <li><a href="FitnessTracker.cs">FitnessTracker.cs</a> — Компонент-трекер з генерацією подій критичних ситуацій.</li>
+        <li><a href="Communicator.cs">Communicator.cs</a> — Компонент для зв'язку між користувачами.</li>
+        <li><a href="Person.cs">Person.cs</a> — Клас користувача (власника).</li>
+        <li><a href="SmartWatchException.cs">SmartWatchException.cs</a> — Власні класи виняткових ситуацій.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Тестування (Validation)</h2>
+
+    <h3>Результат виконання консольного застосунку:</h3>
+    <pre>=== Розумний годинник - Лабораторна робота №6 ===
+
+--- Перевірка комунікації (зв'язок) ---
+[Відправлено до Марія]: Привіт, як справи?
+[Отримано від Олександр]: Привіт, як справи?
+
+--- Перевірка розумного голосового помічника ---
+
+Голосовий помічник почув команду: 'де я'
+Ваші координати: 50,4501, 30,5234
+
+--- Перевірка фітнес трекера (критичні ситуації) ---
+Оновлення нормальних показників...
+Оновлення критичних показників...
+
+🚨 УВАГА! Сигнал тривоги для Марія: Критичний артеріальний тиск! Можливий інсульт.
+
+🚨 УВАГА! Сигнал тривоги для Марія: Висока температура тіла! Гарячка.
+
+--- Обробка виключення виходу масиву за межі ---
+Перехоплено виключення IndexOutOfRangeException: Index was outside the bounds of the array.
+
+--- Тест розрядженої батареї ---
+
+[Увага] Батарея Олександра розряджається! Поточний рівень: 19%
+
+[Увага] Батарея Олександра розряджається! Поточний рівень: 18%
+...
+[Увага] Батарея Олександра розряджається! Поточний рівень: 1%
+
+Перехоплено LowBatteryException: Помилка годинника: Батарея повністю розряджена!
+
+Роботу програми завершено. Натисніть Enter.</pre>
+    <div class="explanation">
+      <p>
+        <strong>Аналіз результатів:</strong><br/>
+        1. <strong>Комунікатор</strong> успішно обмінюється повідомленнями через об'єкти годинників та людей.<br/>
+        2. <strong>Голосовий помічник</strong> (успадкований клас) коректно розпізнає команду та викликає методи GPS-модуля.<br/>
+        3. <strong>Події (Events) фітнес-браслета</strong> успішно спрацьовують (виклик делегатів <code>HealthCriticalHandler</code>) при заданні критичних показників пульсу або температури, та передають управління в обробник стану годинника, який записує лог у файл.<br/>
+        4. Відпрацювали механізми перехоплення винятків виходу за межі масиву (вбудований Exception) та розрядки батареї годинника (наш <strong>кастомний Exception</strong> <code>LowBatteryException</code>).<br/>
+        5. Делегат <code>OnBatteryLow</code> сигналізує користувачу щоразу, коли заряд падає нижче 20%.
+      </p>
+    </div>
+
+    <div class="explanation" style="background-color: #e6ffe6; border-left-color: #28a745;">
+        <p><strong>Загальний висновок:</strong> Програма відпрацьовує без збоїв. Всі події штатно перехоплюються, а критичні помилки (винятки) обробляються блоками <code>try-catch</code>, що забезпечує стабільність роботи застосунку.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Висновок</h2>
+    <p>
+      Під час виконання лабораторної роботи було створено комплексну консольну програму "Розумний годинник" на C#. Основні досягнення в межах поточного завдання: закріплено розуміння відношень між класами (агрегація годинника з користувачем, композиція модулів всередині корпусу годинника). Успішно імплементовано механізм делегатів та подій (<code>event</code>) для асинхронного реагування на зміну життєво-важливих показників та заряду батареї. Крім того, розроблено власну ієрархію обробки винятків на базі <code>ApplicationException</code>, що дозволило моделювати реальні проблеми пристрою (несправність батареї) без аварійного завершення загального потоку програми.
+    </p>
+  </div>
+</div>
+</body>
+</html>
