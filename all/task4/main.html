@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіт з лабораторної роботи</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --bg-color: #f4f7f9;
+            --code-bg: #2d2d2d;
+            --code-color: #f8f8f2;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .nav-links a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: #002244;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+        ul.file-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul.file-list li {
+            margin-bottom: 10px;
+        }
+        ul.file-list a {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        ul.file-list a:hover {
+            text-decoration: underline;
+        }
+        .explanation {
+            background-color: #e6f2ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+            font-style: italic;
+        }
+        pre {
+            background-color: var(--code-bg);
+            color: var(--code-color);
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Звіт з лабораторної роботи №4</h1>
+        
+        <div class="section">
+            <h2>Мета</h2>
+            <p>Опанувати принципи об'єктно-орієнтованого програмування в C# шляхом створення ієрархій класів. Набути практичних навичок роботи з віртуальними методами, інтерфейсами, абстрактними класами, а також стандартними інтерфейсами .NET (<code>IComparable</code>, <code>IComparer</code>, <code>IEnumerable</code>) для порівняння, сортування та перебору об'єктів у колекціях.</p>
+        </div>
+
+        <div class="section">
+            <h2>Умова</h2>
+            <p>Основним завданням є створення консольного застосунку мовою C# для роботи з ієрархією класів комп'ютерної техніки.</p>
+            <ul>
+                <li><strong>Версія 1:</strong> Створити базовий клас <code>Комп’ютерна_техніка</code> та похідні класи <code>Комп’ютер</code>, <code>Монітор</code>, <code>Планшет</code>. Задати загальні і специфічні поля, конструктори, властивості, методи виведення даних, а також методи визначення вартості та рейтингу популярності.</li>
+                <li><strong>Версія 2:</strong> Розробити другу версію, що реалізує ієрархію класів у вигляді інтерфейсу (наприклад, <code>IComputerEquipment</code>). Продемонструвати доступ до методів похідних класів через посилання на інтерфейс (поліморфізм).</li>
+                <li><strong>Версія 3:</strong> Реалізувати ієрархію у вигляді абстрактного базового класу. Протестувати відмінності між застосуванням інтерфейсів і абстрактних класів.</li>
+                <li><strong>Версія 4:</strong> Створити масив (колекцію) об'єктів класу <code>Комп’ютер</code> та імплементувати:
+                    <ul>
+                        <li>Інтерфейс <code>IComparable</code> для порівняння комп’ютерів за ціною в методі <code>CompareTo()</code>.</li>
+                        <li>Інтерфейс <code>IComparer</code> для порівняння комп'ютерів за габаритами.</li>
+                        <li>Інтерфейс <code>IEnumerable</code> для виведення на консоль списку комп’ютерів, впорядкованих за ціною.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Діаграма класів</h2>
+            
+                <iframe src="dasda.pdf" width="100%" height="600px" style="border:none;"></iframe>
+        </div>
+
+        <div class="section">
+            <h2>Код програми</h2>
+            <p>Вихідні коди проєкту розділені на логічні простори імен відповідно до версій завдання:</p>
+            <ul class="file-list">
+                <li><a href="Program.cs" target="_blank">Program.cs</a> (Точка входу та основне меню)</li>
+                <li><a href="Version1.cs" target="_blank">Version1.cs</a> </li>
+                <li><a href="Version2.cs" target="_blank">Version2.cs</a> </li>
+                <li><a href="Version3.cs" target="_blank">Version3.cs</a> </li>
+                <li><a href="Version4.cs" target="_blank">Version4.cs</a> </li>
+
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Тестування (Validation)</h2>
+
+            <h3>Тестування Версії 1: Звичайне успадкування</h3>
+            <pre>
+=== Версія 1: Звичайне успадкування ===
+[Version 1] Model: Dell Inspiron, Price: 15000, Manufacturer: Dell, Warranty: 12 months
+        RAM: 16GB, HDD: 512GB
+Popularity: 5
+Cost with modifications: 15100
+[Version 1] Model: LG UltraGear, Price: 8000, Manufacturer: LG, Warranty: 24 months
+        Screen Size: 27 inches</pre>
+            <div class="explanation">
+                <p>Як бачимо, поліморфізм для методу <code>Display()</code> відпрацьовує коректно: базовий клас виводить загальні поля (виробник, гарантія), а похідні (Комп'ютер, Монітор) доповнюють інформацію своїми специфічними (RAM, діагональ). Крім того, метод <code>CalculateCost()</code> у класі Комп'ютер перевизначає логіку, додаючи 100 одиниць до ціни через те, що RAM становить 16GB.</p>
+            </div>
+
+            <h3>Тестування Версії 2: Робота через Інтерфейси</h3>
+            <pre>
+=== Версія 2: Інтерфейси ===
+[Version 2 - Interface] Model: MacBook Pro, Price: 45000, Manufacturer: Apple, Warranty: 12 months
+        RAM: 16GB, HDD: 512GB
+[Version 2 - Interface] Model: iPad Air, Price: 25000, Manufacturer: Apple, Warranty: 12 months
+        Battery: 7000 mAh</pre>
+            <div class="explanation">
+                <p>Оголошення об'єктів відбувається як <code>IComputerEquipment v2Equipment = new Computer(...)</code>. Звернення до методів через посилання на інтерфейс працює вірно, і завдяки пізньому зв'язуванню викликаються відповідні перевантажені методи <code>Display()</code> класів Комп'ютер та Планшет.</p>
+            </div>
+
+            <h3>Тестування Версії 3: Абстрактні класи</h3>
+            <pre>
+=== Версія 3: Абстрактні класи ===
+[Version 3 - Abstract Class] Model: Samsung Odyssey, Price: 12000, Manufacturer: Samsung, Warranty: 24 months
+        Screen Size: 32 inches</pre>
+            <div class="explanation">
+                <p>Базовий клас тепер визначений як <code>abstract</code>, тому створити його екземпляр неможливо. Метод <code>Display()</code> є абстрактним, що зобов'язує кожен похідний клас реалізувати його власноруч. Код успішно компілюється і виводить дані об'єкта класу <code>Monitor</code>.</p>
+            </div>
+
+            <h3>Тестування Версії 4: IComparable, IComparer та IEnumerable</h3>
+            <pre>
+=== Версія 4: Масив об'єктів класу Комп'ютер (IComparable, IComparer, IEnumerable) ===
+--- Виведення комп'ютерів, відсортованих за ціною (IComparable, IEnumerable) ---
+Computer Model: PC-3, Price: 8000, Dimensions: 18.2
+Computer Model: PC-1, Price: 12000, Dimensions: 15.5
+Computer Model: PC-4, Price: 21000, Dimensions: 14.8
+Computer Model: PC-2, Price: 35000, Dimensions: 12
+
+--- Виведення комп'ютерів, відсортованих за габаритами (IComparer) ---
+Computer Model: PC-2, Price: 35000, Dimensions: 12
+Computer Model: PC-1, Price: 12000, Dimensions: 15.5
+Computer Model: PC-3, Price: 8000, Dimensions: 18.2</pre>
+            <div class="explanation">
+                <p><strong>IComparable та IEnumerable:</strong> При використанні циклу <code>foreach</code> над колекцією <code>ComputerCollection</code>, імплементація інтерфейсу <code>IEnumerable</code> викликає вбудоване сортування (яке базується на <code>IComparable.CompareTo()</code>). Таким чином масив автоматично відсортовано за зростанням вартості комп'ютерів (від 8000 до 35000).</p>
+                <p><strong>IComparer:</strong> За допомогою окремого допоміжного класу <code>ComputerDimensionsComparer</code> об'єкти були відсортовані спираючись на їх поле <code>Dimensions</code> (від найменшого 12.0 до найбільшого 18.2).</p>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <h2>Висновок</h2>
+            <p>Під час виконання лабораторної роботи було створено чотири варіанти консольного застосунку, кожен з яких демонструє певний аспект ООП в C#. Реалізовано просте успадкування з віртуальними методами; продемонстровано поліморфізм з використанням інтерфейсів та абстрактних класів для побудови правильної архітектури. Найважливішою частиною роботи стало успішне розуміння та імплементація інтерфейсів <code>IComparable</code>, <code>IComparer</code> для кастомного сортування об'єктів (за ціною та габаритами) та <code>IEnumerable</code> для ітерування колекціями через <code>foreach</code>. Завдання виконане у повному обсязі.</p>
+        </div>
+    </div>
+</body>
+</html>
